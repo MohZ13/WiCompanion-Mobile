@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mohil Zalavadiya\.android\build-cache\26d7976b108fcf84c262693030f20734c45d29d1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\Mohil Zalavadiya\AndroidStudioProjects\WiCompanion\app\build\intermediates\pre-dexed\debug\classes_71aa2272e4b2e536cfcf68d924c2a5a3318c10cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mohil Zalavadiya\.android\build-cache\0f56683d52e3c649fbda08a6d6d6a18bf0782b07\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Users\Mohil Zalavadiya\AndroidStudioProjects\WiCompanion\app\build\intermediates\pre-dexed\debug\classes_1ef2bb6df79819a02592af247ec90b618df07d9e.jar" />
+    </item>
+
+</items>

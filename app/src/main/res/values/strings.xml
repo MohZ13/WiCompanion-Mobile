@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WiCompanion</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="ipForConnection">Not Connected</string>
+    <string name="iconContentDescription">App Icon</string>
+    <string name="ipAddressHint">Enter IP address...</string>
+    <string name="connectButtonText">Connect</string>
+    <string name="commandImageContentDescription">Voice Input Button</string>
+    <string name="sendCmdBtnText">Send</string>
+    <string name="leftMouseBtnText">Left</string>
+    <string name="middleBtnText">Middle</string>
+    <string name="rightBtnText">Right</string>
+</resources>

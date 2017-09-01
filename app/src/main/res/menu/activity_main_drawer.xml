@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item android:id="@+id/connect"
+        android:icon="@drawable/ic_menu_connect"
+        android:title="Connect"/>
+
+    <item android:title="Tools">
+    <menu>
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/freq_used"
+                android:icon="@drawable/ic_menu_keyboard"
+                android:title="Keyboard" />
+            <item
+                android:id="@+id/cmd"
+                android:icon="@drawable/ic_menu_command"
+                android:title="Command" />
+            <item
+                android:id="@+id/mouse"
+                android:icon="@drawable/ic_menu_mouse"
+                android:title="Mouse" />
+        </group>
+    </menu>
+    </item>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+        </menu>
+    </item>
+</group>
+</menu>

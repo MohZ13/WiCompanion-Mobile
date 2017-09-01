@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/connectButtonText" />
+
+    <EditText
+        android:id="@+id/ipAddressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/connectButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:ems="10"
+        android:hint="@string/ipAddressHint"
+        android:inputType="text" />
+</RelativeLayout>
