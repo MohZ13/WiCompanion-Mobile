@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.Window;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -38,13 +37,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setCheckedItem(AppConstants.selectedNavItem);
         selectNavigationItem(AppConstants.selectedNavItem);
 
-        AppConstants.navigationView = navigationView;
-        AppConstants.mContext = this;
-
-        /*if (AppConstants.ipForConnection != null) {
-            TextView navIpText = (TextView) navigationView.findViewById(R.id.navIpText);
+        if (AppConstants.ipForConnection != null) {
+            TextView navIpText = (TextView) navigationView.getHeaderView(0).findViewById(R.id.navIpText);
             navIpText.setText(AppConstants.ipForConnection);
-        }*/
+        }
     }
 
     @Override
@@ -79,7 +75,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }*/
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -96,7 +91,7 @@ public class MainActivity extends AppCompatActivity
 
         AppConstants.selectedNavItem = selectedId;
         if (selectedId == R.id.connect) {
-            fragment = new ConnectFragment();
+            fragment = ConnectFragment.newInstance(this);
             toolbar.setTitle("Connect");
         } else if (selectedId == R.id.freq_used) {
             fragment = new FreqUsedFragment();
@@ -110,8 +105,8 @@ public class MainActivity extends AppCompatActivity
         } else if (selectedId == R.id.nav_share) {
             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            sharingIntent.putExtra(Intent.EXTRA_TITLE, "WiCompanion"); //TODO: update link to GitHub or other link
-            sharingIntent.putExtra(Intent.EXTRA_TEXT, "WiCompanion - Connection between your Computer and Smart phone...\nLink will soon be placed here...");
+            sharingIntent.putExtra(Intent.EXTRA_TITLE, "WiCompanion");
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, "WiCompanion - Control your Windows PC with your Android phone...\n\nhttps://github.com/MohZ13/WiCompanion-Mobile");
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         }
 

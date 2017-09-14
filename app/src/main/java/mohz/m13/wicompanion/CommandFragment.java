@@ -42,7 +42,8 @@ public class CommandFragment extends Fragment {
             public void onClick(View v) {
                 String cmdText = commandText.getText().toString();
                 if (!cmdText.equals("")) {
-                    new SendText().execute(AppConstants.ipForConnection, cmdText);
+                    new SendText().execute(cmdText);
+                    commandText.setText("");
                 }
             }
         });
@@ -58,7 +59,7 @@ public class CommandFragment extends Fragment {
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivityForResult(intent, 10);
                 } else {
-                    Toast.makeText(getActivity().getApplicationContext(), "Your Device Don't Support Speech Input", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "Your Device Doesn't Support Speech Input", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -76,7 +77,7 @@ public class CommandFragment extends Fragment {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     commandText.setText(result.get(0));
 
-                    new SendText().execute(AppConstants.ipForConnection, result.get(0));
+                    new SendText().execute(result.get(0));
                 }
                 break;
         }
@@ -88,8 +89,8 @@ public class CommandFragment extends Fragment {
         protected Void doInBackground(String... params) {
             try {
                 DatagramSocket ds = new DatagramSocket();
-                byte[] cmdBytes = params[1].getBytes();
-                String ip = params[0];
+                byte[] cmdBytes = params[0].getBytes();
+                String ip = AppConstants.ipForConnection;
 
                 ds.send(new DatagramPacket(cmdBytes, cmdBytes.length, InetAddress.getByName(ip),1316));
             } catch (IOException e) {
