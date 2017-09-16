@@ -13,4 +13,7 @@
     <string name="leftMouseBtnText">Left</string>
     <string name="middleBtnText">Middle</string>
     <string name="rightBtnText">Right</string>
+    <string name="WinImageDescription">Windows Logo Image</string>
+    <string name="tvBrightnessText">Brightness</string>
+    <string name="tvVolumeText">Volume</string>
 </resources>

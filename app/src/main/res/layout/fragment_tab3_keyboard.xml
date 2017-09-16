@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvBrightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/tvBrightnessText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <TextView
+        android:id="@+id/tvVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvBrightness"
+        android:layout_alignBottom="@+id/tvBrightness"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:text="@string/tvVolumeText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <Button
+        android:id="@+id/brightnessUpButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvBrightness"
+        android:layout_alignRight="@+id/tvBrightness"
+        android:layout_below="@+id/tvBrightness"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="21dp"
+        android:text="+"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:id="@+id/volUpButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/brightnessUpButton"
+        android:layout_alignBottom="@+id/brightnessUpButton"
+        android:layout_alignLeft="@+id/tvVolume"
+        android:layout_alignStart="@+id/tvVolume"
+        android:layout_marginLeft="5dp"
+        android:text="+"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:id="@+id/brightnessDownButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/brightnessUpButton"
+        android:layout_alignStart="@+id/brightnessUpButton"
+        android:layout_below="@+id/brightnessUpButton"
+        android:text="-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:id="@+id/volDownButton"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/volUpButton"
+        android:layout_alignStart="@+id/volUpButton"
+        android:layout_below="@+id/volUpButton"
+        android:text="-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sleepButton"
+        android:layout_alignLeft="@+id/sleepButton"
+        android:layout_alignStart="@+id/sleepButton">
+
+        <Button
+            android:id="@+id/offMonitorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Turn Off Monitor" />
+
+        <Button
+            android:id="@+id/onMonitorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Turn On Monitor" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sleepButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/shutDownButton"
+        android:layout_alignLeft="@+id/shutDownButton"
+        android:layout_alignStart="@+id/shutDownButton"
+        android:text="Sleep" />
+
+    <Button
+        android:id="@+id/shutDownButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/restartButton"
+        android:layout_alignLeft="@+id/restartButton"
+        android:layout_alignStart="@+id/restartButton"
+        android:text="Shut Down" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Restart" />
+</RelativeLayout>

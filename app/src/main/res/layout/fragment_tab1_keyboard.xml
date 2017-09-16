@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:text="START" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/startButton"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Close" />
+
+    <Button
+        android:id="@+id/altabButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/startButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/startButton"
+        android:layout_marginBottom="15dp"
+        android:text="ALT + TAB" />
+
+    <Button
+        android:id="@+id/tabButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stopButton"
+        android:layout_alignStart="@+id/stopButton"
+        android:layout_alignTop="@+id/altabButton"
+        android:text="Tab" />
+
+    <Button
+        android:id="@+id/upButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stopButton"
+        android:layout_centerHorizontal="true"
+        android:text="UP" />
+
+    <Button
+        android:id="@+id/enterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/upButton"
+        android:layout_alignStart="@+id/upButton"
+        android:layout_below="@+id/upButton"
+        android:text="ENTER" />
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upButton"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_toLeftOf="@+id/enterButton"
+        android:layout_toStartOf="@+id/enterButton"
+        android:text="LEFT" />
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/enterButton"
+        android:layout_alignBottom="@+id/enterButton"
+        android:layout_marginLeft="9dp"
+        android:layout_marginStart="9dp"
+        android:layout_toEndOf="@+id/enterButton"
+        android:layout_toRightOf="@+id/enterButton"
+        android:text="RIGHT" />
+
+    <Button
+        android:id="@+id/downButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterButton"
+        android:layout_toEndOf="@+id/leftButton"
+        android:layout_toRightOf="@+id/leftButton"
+        android:text="DOWN" />
+
+    <Button
+        android:id="@+id/pgdnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tabButton"
+        android:layout_toEndOf="@+id/homeButton"
+        android:layout_toRightOf="@+id/homeButton"
+        android:text="Page Down" />
+
+    <Button
+        android:id="@+id/pgupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pgdnButton"
+        android:layout_alignLeft="@+id/downButton"
+        android:layout_alignStart="@+id/downButton"
+        android:text="Page Up" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/altabButton"
+        android:layout_alignEnd="@+id/leftButton"
+        android:layout_alignRight="@+id/leftButton"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="home" />
+
+    <Button
+        android:id="@+id/endButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rightButton"
+        android:layout_alignStart="@+id/rightButton"
+        android:layout_alignTop="@+id/homeButton"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:text="end" />
+
+</RelativeLayout>

@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -94,7 +97,8 @@ public class MainActivity extends AppCompatActivity
             fragment = ConnectFragment.newInstance(this);
             toolbar.setTitle("Connect");
         } else if (selectedId == R.id.freq_used) {
-            fragment = new FreqUsedFragment();
+            //fragment = new KeyboardTabOneFragment();
+            fragment = new KeyboardFragment();
             toolbar.setTitle("Keyboard");
         } else if (selectedId == R.id.cmd) {
             fragment = new CommandFragment();
