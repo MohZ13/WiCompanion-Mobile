@@ -30,6 +30,7 @@ public class KeyboardTabThreeFragment extends Fragment {
         rootView.findViewById(R.id.volUpButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.offMonitorButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.onMonitorButton).setOnClickListener(clickListener);
+        rootView.findViewById(R.id.lockButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.sleepButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.shutDownButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.restartButton).setOnClickListener(clickListener);
@@ -60,6 +61,7 @@ public class KeyboardTabThreeFragment extends Fragment {
                 new SendButtonInfo().execute("onMonitor");
                 break;
 
+            case R.id.lockButton:
             case R.id.sleepButton:
             case R.id.shutDownButton:
             case R.id.restartButton:
@@ -77,6 +79,9 @@ public class KeyboardTabThreeFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         switch (vId) {
+                            case R.id.lockButton:
+                                new SendButtonInfo().execute("lockComputer");
+                                break;
                             case R.id.sleepButton:
                                 new SendButtonInfo().execute("sleepComputer");
                                 break;

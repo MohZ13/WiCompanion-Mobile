@@ -31,6 +31,7 @@ public class KeyboardTabTwoFragment extends Fragment {
         rootView.findViewById(R.id.runButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.scrShotButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.settingsButton).setOnClickListener(clickListener);
+        rootView.findViewById(R.id.winToolsButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.winUpButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.winDownButton).setOnClickListener(clickListener);
         rootView.findViewById(R.id.winLeftButton).setOnClickListener(clickListener);
@@ -67,6 +68,9 @@ public class KeyboardTabTwoFragment extends Fragment {
                 break;
             case R.id.settingsButton:
                 new SendButtonInfo().execute("settings");
+                break;
+            case R.id.winToolsButton:
+                new SendButtonInfo().execute("winTools");
                 break;
             case R.id.winUpButton:
                 new SendButtonInfo().execute("winUp");
