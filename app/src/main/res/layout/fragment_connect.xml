@@ -10,7 +10,7 @@
         android:layout_centerVertical="true"
         android:text="@string/connectButtonText" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/ipAddressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,5 +19,6 @@
         android:layout_marginBottom="19dp"
         android:ems="10"
         android:hint="@string/ipAddressHint"
+        android:imeOptions="actionDone"
         android:inputType="text" />
 </RelativeLayout>

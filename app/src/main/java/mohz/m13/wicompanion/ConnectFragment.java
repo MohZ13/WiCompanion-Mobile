@@ -6,11 +6,15 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,9 +26,11 @@ import java.net.UnknownHostException;
  */
 
 public class ConnectFragment extends Fragment {
-    EditText ipText;
+    AutoCompleteTextView ipText;
     NavigationView navigationView;
+    View rootView;
     Context mContext;
+    WiCompDBHandler appDB;
 
     public static ConnectFragment newInstance(Context mContext) {
         ConnectFragment connectFragment = new ConnectFragment();
@@ -36,23 +42,37 @@ public class ConnectFragment extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_connect, container, false);
+        rootView = inflater.inflate(R.layout.fragment_connect, container, false);
+
+        appDB = new WiCompDBHandler(mContext);
 
         navigationView = (NavigationView) getActivity().findViewById(R.id.nav_view);
-
-        ipText = (EditText) rootView.findViewById(R.id.ipAddressText);
+        ipText = (AutoCompleteTextView) rootView.findViewById(R.id.ipAddressText);
 
         if (AppConstants.ipForConnection != null) {
             ipText.setText(AppConstants.ipForConnection);
         }
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_list_item_1, appDB.getAllIPAddress());
+        ipText.setAdapter(adapter);
+
+        ipText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    new IPValidator().execute(ipText.getText().toString());
+                    handled = true;
+                }
+                return handled;
+            }
+        });
+
         Button connectButton = (Button) rootView.findViewById(R.id.connectButton);
         connectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ipString = ipText.getText().toString();
-
-                new IPValidator().execute(ipString);
+                new IPValidator().execute(ipText.getText().toString());
             }
         });
 
@@ -88,14 +108,24 @@ public class ConnectFragment extends Fragment {
             TextView navIpText = (TextView) navigationView.getHeaderView(0).findViewById(R.id.navIpText);
             progressDialog.dismiss();
             if (isValidIp) {
-                AppConstants.ipForConnection = ipText.getText().toString();
-                Toast.makeText(mContext, "IP address stored...", Toast.LENGTH_SHORT).show();
+                String validIP = ipText.getText().toString();
+                AppConstants.ipForConnection = validIP;
 
+                View view = getActivity().getCurrentFocus();
+                if (view != null) {
+                    InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
+
+                Toast.makeText(mContext, "Connected!", Toast.LENGTH_SHORT).show();
                 navIpText.setText(AppConstants.ipForConnection);
+                if (appDB.isDistinctIPAddress(validIP)) {
+                    appDB.addIPAddress(validIP);
+                }
             } else {
                 Toast.makeText(mContext, "Invalid IP address!", Toast.LENGTH_LONG).show();
                 ipText.setText("");
-                navIpText.setText("Not connected");
+                navIpText.setText(R.string.navigation_drawer_ip_negative_status);
             }
         }
     }

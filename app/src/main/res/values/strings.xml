@@ -3,6 +3,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_ip_negative_status">Not connected!</string>
 
     <string name="ipForConnection">Not Connected</string>
     <string name="iconContentDescription">App Icon</string>
