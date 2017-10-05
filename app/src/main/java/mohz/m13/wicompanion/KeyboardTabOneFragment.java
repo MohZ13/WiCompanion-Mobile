@@ -88,22 +88,21 @@ public class KeyboardTabOneFragment extends Fragment {
                 break;
         }
     }
-
-    private class SendButtonInfo extends AsyncTask<String, Void, Void> {
-        @Override
-        protected Void doInBackground(String... params) {
-            try {
-                DatagramSocket ds = new DatagramSocket();
-                String ip = AppConstants.ipForConnection;
-                byte[] cmdBytes = params[0].getBytes();
-
-                ds.send(new DatagramPacket(cmdBytes, cmdBytes.length, InetAddress.getByName(ip), 1315));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-    }
 }
 
+class SendButtonInfo extends AsyncTask<String, Void, Void> {
+    @Override
+    protected Void doInBackground(String... params) {
+        try {
+            DatagramSocket ds = new DatagramSocket();
+            String ip = AppConstants.ipForConnection;
+            byte[] cmdBytes = params[0].getBytes();
+
+            ds.send(new DatagramPacket(cmdBytes, cmdBytes.length, InetAddress.getByName(ip), 1315));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+}

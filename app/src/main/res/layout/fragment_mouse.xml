@@ -9,7 +9,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="21dp"
-        android:text="@string/middleBtnText" />
+        android:text="@string/middleMouseBtnText" />
 
     <Button
         android:id="@+id/leftButton"
@@ -31,6 +31,6 @@
         android:layout_marginStart="22dp"
         android:layout_toEndOf="@+id/middleButton"
         android:layout_toRightOf="@+id/middleButton"
-        android:text="@string/rightBtnText" />
+        android:text="@string/rightMouseBtnText" />
 
 </RelativeLayout>

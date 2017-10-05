@@ -14,7 +14,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="19dp"
-        android:text="START" />
+        android:text="@string/startButtonText" />
 
     <Button
         android:id="@+id/stopButton"
@@ -25,7 +25,7 @@
         android:layout_alignTop="@+id/startButton"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="Close" />
+        android:text="@string/closeButtonText" />
 
     <Button
         android:id="@+id/altabButton"
@@ -35,7 +35,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/startButton"
         android:layout_marginBottom="15dp"
-        android:text="ALT + TAB" />
+        android:text="@string/altTabButtonText" />
 
     <Button
         android:id="@+id/tabButton"
@@ -44,7 +44,7 @@
         android:layout_alignLeft="@+id/stopButton"
         android:layout_alignStart="@+id/stopButton"
         android:layout_alignTop="@+id/altabButton"
-        android:text="Tab" />
+        android:text="@string/tabButtonText" />
 
     <Button
         android:id="@+id/upButton"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/stopButton"
         android:layout_centerHorizontal="true"
-        android:text="UP" />
+        android:text="@string/upButtonText" />
 
     <Button
         android:id="@+id/enterButton"
@@ -61,7 +61,7 @@
         android:layout_alignLeft="@+id/upButton"
         android:layout_alignStart="@+id/upButton"
         android:layout_below="@+id/upButton"
-        android:text="ENTER" />
+        android:text="@string/enterButtonText" />
 
     <Button
         android:id="@+id/leftButton"
@@ -72,7 +72,7 @@
         android:layout_marginRight="7dp"
         android:layout_toLeftOf="@+id/enterButton"
         android:layout_toStartOf="@+id/enterButton"
-        android:text="LEFT" />
+        android:text="@string/leftButtonText" />
 
     <Button
         android:id="@+id/rightButton"
@@ -84,7 +84,7 @@
         android:layout_marginStart="9dp"
         android:layout_toEndOf="@+id/enterButton"
         android:layout_toRightOf="@+id/enterButton"
-        android:text="RIGHT" />
+        android:text="@string/rightButtonText" />
 
     <Button
         android:id="@+id/downButton"
@@ -93,7 +93,7 @@
         android:layout_below="@+id/enterButton"
         android:layout_toEndOf="@+id/leftButton"
         android:layout_toRightOf="@+id/leftButton"
-        android:text="DOWN" />
+        android:text="@string/downButtonText" />
 
     <Button
         android:id="@+id/pgdnButton"
@@ -102,7 +102,7 @@
         android:layout_above="@+id/tabButton"
         android:layout_toEndOf="@+id/homeButton"
         android:layout_toRightOf="@+id/homeButton"
-        android:text="Page Down" />
+        android:text="@string/pageDownButtonText" />
 
     <Button
         android:id="@+id/pgupButton"
@@ -111,7 +111,7 @@
         android:layout_above="@+id/pgdnButton"
         android:layout_alignLeft="@+id/downButton"
         android:layout_alignStart="@+id/downButton"
-        android:text="Page Up" />
+        android:text="@string/pageUpButtonText" />
 
     <Button
         android:id="@+id/homeButton"
@@ -123,7 +123,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="home" />
+        android:text="@string/homeButtonText" />
 
     <Button
         android:id="@+id/endButton"
@@ -134,6 +134,6 @@
         android:layout_alignTop="@+id/homeButton"
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp"
-        android:text="end" />
+        android:text="@string/endButtonText" />
 
 </RelativeLayout>

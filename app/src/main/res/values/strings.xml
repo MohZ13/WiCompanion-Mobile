@@ -9,12 +9,48 @@
     <string name="iconContentDescription">App Icon</string>
     <string name="ipAddressHint">Enter IP address…</string>
     <string name="connectButtonText">Connect</string>
+
     <string name="commandImageContentDescription">Voice Input Button</string>
     <string name="sendCmdBtnText">Send</string>
-    <string name="leftMouseBtnText">Left</string>
-    <string name="middleBtnText">Middle</string>
-    <string name="rightBtnText">Right</string>
+
+    <string name="startButtonText">START</string>
+    <string name="closeButtonText">Close</string>
+    <string name="altTabButtonText">ALT + TAB</string>
+    <string name="tabButtonText">Tab</string>
+    <string name="upButtonText">UP</string>
+    <string name="downButtonText">DOWN</string>
+    <string name="leftButtonText">LEFT</string>
+    <string name="rightButtonText">RIGHT</string>
+    <string name="enterButtonText">ENTER</string>
+    <string name="pageUpButtonText">Page Up</string>
+    <string name="pageDownButtonText">Page Down</string>
+    <string name="homeButtonText">Home</string>
+    <string name="endButtonText">End</string>
+
+    <string name="explorerButtonText">Explorer</string>
+    <string name="desktopButtonText">Desktop</string>
+    <string name="searchButtonText">Search</string>
+    <string name="minimizeButtonText">Minimize</string>
+    <string name="taskViewButtonText">Task View</string>
+    <string name="cortanaButtonText">Cortana</string>
+    <string name="runButtonText">Run</string>
+    <string name="screenshotButtonText">Screenshot</string>
+    <string name="settingsButtonText">Settings</string>
+    <string name="winToolMenuButtonText">Windows Tools Menu</string>
     <string name="WinImageDescription">Windows Logo Image</string>
+
     <string name="tvBrightnessText">Brightness</string>
     <string name="tvVolumeText">Volume</string>
+    <string name="incrementButtonText">+</string>
+    <string name="decrementButtonText">-</string>
+    <string name="onMonitorButtonText">Turn On Monitor</string>
+    <string name="offMonitorButtonText">Turn Off Monitor</string>
+    <string name="lockButtonText">Lock</string>
+    <string name="sleepButtonText">Sleep</string>
+    <string name="shutDownButtonText">Shut Down</string>
+    <string name="restartButtonText">Restart</string>
+
+    <string name="leftMouseBtnText">Left</string>
+    <string name="middleMouseBtnText">Middle</string>
+    <string name="rightMouseBtnText">Right</string>
 </resources>
