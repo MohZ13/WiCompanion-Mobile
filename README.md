@@ -10,7 +10,7 @@ This app can be used to give voice commands to PC. It also provides mouse and so
 
 ## Deployment
 
-For those who want to use it directly, download this [apk file](https://drive.google.com/open?id=0B85YwrZQON4pTjhFc1FoVG52SkU).
+For those who want to use it directly, download this [apk file](https://drive.google.com/open?id=0B85YwrZQON4pajBUOVg2WVZFd0k).
 
 Also you need to have [WiCompanion-PC](https://github.com/MohZ13/WiCompanion-PC) [deployed](https://github.com/MohZ13/WiCompanion-PC#deployment) on your PC.
 
@@ -20,15 +20,31 @@ On PC,
 1. Start [WiCompanion](https://github.com/MohZ13/WiCompanion-PC#deployment) on your PC.
 2. Check status of all interface, they shuold be in "Running..." status. You can verify it in "Log" section also.
 3. Get the IP address displayed at top right corner of WiCompanion server.
-> It will be like, "user/x.x.x.x". Ignore "user/" and what is left will be your IP.
 
 On android phone,
 1. Start WiCompanion app
 2. In Connect, enter the valid IP address as displayed in WiCompanion server.
 3. After connecting successfully, you can switch to any of these three...
-    - Keyboard (Contains some basic keys like -> arrow keys, alt+tab, start for Windows key)
+    - Keyboard (Navigate and control your Windows PC)
     - Mouse (Have the feeling of wireless mouse)
     - Command (Control through text and voice command), more below...
+    
+### Included Keys
+- Windows key
+- Arrow keys
+- home, end, pgup, pgdn, ALT+TAB, TAB, ALT+F4
+
+- Perform various tasks
+    - Open Windows explorer
+    - Go to Desktop
+    - Minimize all
+    - Get task view, run, screenshot
+    - Search with Cortana
+    - Open Windows Tools context menu (WIN + X)
+    - Resize your windows (WIN + arrow keys)
+    - Change brightness, volume
+    - Turn on|off monitor
+    - Lock, sleep, shut down, restart
     
 ### Available commands
 
@@ -43,5 +59,12 @@ You can give command by either typing in provided field or by providing speech i
 4. full screen
 5. stop (4,5 will work in VLC media player)
 6. close (alt + f4) (will work anywhere)
+7. ask cortana
+    - cortana will popup on your PC
+    - send any text from your app by typing or speaking
+    - And it'll be written on your PC
+8. type
+    - type or give speech input from your app
+    - And have it written on your PC.
 
 More will be added!
