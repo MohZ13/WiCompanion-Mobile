@@ -13,6 +13,17 @@
     <string name="commandImageContentDescription">Voice Input Button</string>
     <string name="sendCmdBtnText">Send</string>
 
+    <string-array name="commandsArray">
+        <item>Ask Cortana</item>
+        <item>Type</item>
+        <item>Play movie</item>
+        <item>Pause</item>
+        <item>Resume</item>
+        <item>Full screen</item>
+        <item>Stop</item>
+        <item>Close</item>
+    </string-array>
+
     <string name="startButtonText">START</string>
     <string name="closeButtonText">Close</string>
     <string name="altTabButtonText">ALT + TAB</string>
@@ -53,4 +64,5 @@
     <string name="leftMouseBtnText">Left</string>
     <string name="middleMouseBtnText">Middle</string>
     <string name="rightMouseBtnText">Right</string>
+    <string name="prevCmdTextSuggestion">The text that you are going to write or speak will appear here!</string>
 </resources>

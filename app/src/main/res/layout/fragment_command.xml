@@ -5,15 +5,17 @@
 
     <ImageButton
         android:id="@+id/voiceImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="49dp"
+        android:background="@null"
         android:contentDescription="@string/commandImageContentDescription"
+        android:scaleType="fitXY"
         app:srcCompat="@mipmap/ic_voice_cmd" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/commandText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,5 +33,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
         android:text="@string/sendCmdBtnText" />
+
+    <TextView
+        android:id="@+id/prevCmdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/commandText"
+        android:layout_alignLeft="@+id/commandText"
+        android:layout_alignRight="@+id/commandText"
+        android:layout_alignStart="@+id/commandText"
+        android:layout_below="@+id/sendCommandButton"
+        android:layout_marginTop="42dp"
+        android:text="@string/prevCmdTextSuggestion"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>

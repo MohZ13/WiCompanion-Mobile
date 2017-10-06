@@ -8,9 +8,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -27,14 +29,21 @@ import static android.app.Activity.RESULT_OK;
  */
 
 public class CommandFragment extends Fragment {
-    private EditText commandText;
+    private AutoCompleteTextView commandText;
+    private TextView prevCmdText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_command, container, false);
 
-        commandText = (EditText) rootView.findViewById(R.id.commandText);
+        commandText = (AutoCompleteTextView) rootView.findViewById(R.id.commandText);
+        prevCmdText = (TextView) rootView.findViewById(R.id.prevCmdText);
+
+        String[] commandsArray = getResources().getStringArray(R.array.commandsArray);
+        ArrayAdapter<String> cmdAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, commandsArray);
+        commandText.setAdapter(cmdAdapter);
+        commandText.setThreshold(1);
 
         Button sendButton = (Button) rootView.findViewById(R.id.sendCommandButton);
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +52,6 @@ public class CommandFragment extends Fragment {
                 String cmdText = commandText.getText().toString();
                 if (!cmdText.equals("")) {
                     new SendText().execute(cmdText);
-                    commandText.setText("");
                 }
             }
         });
@@ -75,18 +83,16 @@ public class CommandFragment extends Fragment {
             case 10:
                 if (resultCode == RESULT_OK && data != null) {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    commandText.setText(result.get(0));
-
                     new SendText().execute(result.get(0));
                 }
                 break;
         }
     }
 
-    private class SendText extends AsyncTask<String, Void, Void> {
+    private class SendText extends AsyncTask<String, Void, String> {
 
         @Override
-        protected Void doInBackground(String... params) {
+        protected String doInBackground(String... params) {
             try {
                 DatagramSocket ds = new DatagramSocket();
                 byte[] cmdBytes = params[0].getBytes();
@@ -97,7 +103,14 @@ public class CommandFragment extends Fragment {
                 e.printStackTrace();
             }
 
-            return null;
+            return params[0];
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            commandText.setText("");
+            prevCmdText.setText(s);
         }
     }
 }

@@ -69,7 +69,7 @@ public class MouseFragment extends Fragment {
                 String y = String.valueOf(curY - prevY);
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_MOVE:
-                        new SendText().execute(x + "," + y);
+                        new SendCoords().execute(x + "," + y);
                         prevX = curX;
                         prevY = curY;
                         break;
@@ -86,7 +86,7 @@ public class MouseFragment extends Fragment {
         return rootView;
     }
 
-    private class SendText extends AsyncTask<String, Void, Void> {
+    private class SendCoords extends AsyncTask<String, Void, Void> {
 
         @Override
         protected Void doInBackground(String... params) {
